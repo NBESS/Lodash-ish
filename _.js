@@ -59,13 +59,23 @@ const _ = {
         })
 
         return filteredWords;
-    }
+    },
 
+    pad(string, length) {
+        if (string.length >= length) {
+            return string
+        }
+        let startPaddingLength = Math.floor((length - string.length) / 2);
+        let endPaddingLength = (length - string.length) - startPaddingLength;
+
+        let paddedString = " ".repeat(startPaddingLength) + string + " ".repeat(endPaddingLength);
+
+        return paddedString
+
+    },
 
     // Do not write or modify code below this line.
 };
 
-console.log(_.words('this is great & awesome'))
-console.log()
 
 module.exports = _;
