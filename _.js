@@ -24,25 +24,24 @@ const _ = {
         const clampedValue = Math.min(lowerClampedValue, upperBound);
 
         return clampedValue
-    }
+    },
 
-    inRange(number, startValue, endValue = 0) {
-        // compare number to start value
-        if (number < startValue) {
-            return false
+    inRange(number, start, end) {
+        // check to see if the endValue is undefined, if so, set it to 0
+        if (end === undefined) {
+            end = start
+            start = 0
         }
-        if (startValue > endValue) {
-            let newStartVal = endValue;
-            let newEndVal = startValue;
-            if (number < newStartVal) {
-                return false
-            }
+        // swap start and end values if start greater than end
+        if (start > end) {
+            let tempEnd = end;
+            end = start
+            start = tempEnd;
         }
-        // if lower than start value return false
+        const isInRange = start <= number && end > number ? true : false;
+        return isInRange
 
-        // 
     }
-
 
 
     // Do not write or modify code below this line.
