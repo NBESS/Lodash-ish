@@ -41,11 +41,31 @@ const _ = {
         const isInRange = start <= number && end > number ? true : false;
         return isInRange
 
+    },
+
+    words(stringOfWords) {
+        // create a variable arrayOfWords that stores string as an array of strings made up of the words in the string
+        let arrayOfWords = []
+        // separate words based on ' ' in the string and store into arrayOfWords 
+        arrayOfWords = stringOfWords.split(' ')
+
+        const filteredWords = arrayOfWords.filter(word => {
+            if (typeof word == 'string' && word != '&') {
+                return true
+            } else {
+                return false
+            }
+
+        })
+
+        return filteredWords;
     }
 
 
     // Do not write or modify code below this line.
 };
 
+console.log(_.words('this is great & awesome'))
+console.log()
 
 module.exports = _;
