@@ -100,9 +100,22 @@ const _ = {
         }
     },
 
-    // Do not write or modify code below this line.
-};
+    drop(arr, num) {
+        let droppedArr = []
 
+        if (!num) {
+            num = 1;
+        }
+
+        droppedArr = arr.slice(num)
+        return droppedArr
+
+
+        // Do not write or modify code below this line.
+    },
+
+
+};
 
 
 
