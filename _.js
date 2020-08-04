@@ -74,8 +74,16 @@ const _ = {
 
     },
 
+    has(obj, key) {
+        let hasValue = obj[key] === undefined ? false : true;
+        return hasValue;
+
+    },
+
     // Do not write or modify code below this line.
 };
+
+
 
 
 module.exports = _;
