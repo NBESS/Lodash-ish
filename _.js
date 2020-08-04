@@ -80,6 +80,26 @@ const _ = {
 
     },
 
+    invert(obj) {
+        const invertedObject = {};
+        for (prop in obj) {
+            let originalValue = obj[prop];
+            invertedObject[originalValue] = prop;
+        }
+        return invertedObject
+    },
+
+    findKey(obj, predicate) {
+        for (item in obj) {
+            let value = obj[item];
+            let predicateReturnValue = predicate(value);
+            if (predicateReturnValue) {
+                return item
+            }
+            return undefined
+        }
+    },
+
     // Do not write or modify code below this line.
 };
 
